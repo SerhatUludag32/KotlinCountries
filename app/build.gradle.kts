@@ -75,12 +75,13 @@ dependencies {
     val retrofitVersion = "2.8.1"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
-    implementation("com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion")
+    implementation ("io.reactivex.rxjava2:rxandroid:2.1.1")
+    implementation ("io.reactivex.rxjava2:rxjava:2.2.21")
 
     // RxJava
-    val rxJavaVersion = "3.1.9"
-    implementation("io.reactivex.rxjava3:rxjava:$rxJavaVersion")
-    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
