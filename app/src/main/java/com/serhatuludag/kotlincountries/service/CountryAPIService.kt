@@ -9,9 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class CountryAPIService {
 
-    //https://raw.githubusercontent.com/atilsamancioglu/IA19-DataSetCountries/master/countrydataset.json
-    //BASE = https://raw.githubusercontent.com/
-
     private val BASE_URL = "https://raw.githubusercontent.com/"
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
