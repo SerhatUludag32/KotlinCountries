@@ -1,12 +1,12 @@
 package com.serhatuludag.kotlincountries.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.serhatuludag.kotlincountries.R
 import com.serhatuludag.kotlincountries.databinding.ItemRowBinding
 import com.serhatuludag.kotlincountries.model.Country
+import com.serhatuludag.kotlincountries.view.FeedFragmentDirections
 
 class CountryAdapter(val countryList : ArrayList<Country>):RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
@@ -25,6 +25,10 @@ class CountryAdapter(val countryList : ArrayList<Country>):RecyclerView.Adapter<
         holder.binding.countryName.text = countryList[position].countryName
         holder.binding.regionName.text = countryList[position].countryRegion
         //Image
+        holder.itemView.setOnClickListener {
+            val action = FeedFragmentDirections.actionFeedFragmentToInfoFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
 
     }
 
