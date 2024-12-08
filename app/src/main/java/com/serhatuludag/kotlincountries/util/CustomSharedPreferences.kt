@@ -31,6 +31,7 @@ class CustomSharedPreferences {
         sharedPreferences?.edit(commit = true){
             putLong(TIME,time)
         }
-
     }
+
+    fun getTime() = sharedPreferences?.getLong(TIME,0)
 }

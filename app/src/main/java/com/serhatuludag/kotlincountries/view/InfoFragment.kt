@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.serhatuludag.kotlincountries.databinding.FragmentInfoBinding
+import com.serhatuludag.kotlincountries.util.downloadFromURL
+import com.serhatuludag.kotlincountries.util.placeHolderProgressBar
 import com.serhatuludag.kotlincountries.viewmodel.CountryViewModel
 
 
@@ -37,12 +39,14 @@ class InfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[CountryViewModel::class.java]
-        viewModel.getDataFromRoom()
-
         arguments?.let {
             countryUuid = InfoFragmentArgs.fromBundle(it).countryUuid
         }
+
+
+        viewModel = ViewModelProvider(this)[CountryViewModel::class.java]
+        viewModel.getDataFromRoom(countryUuid)
+
 
         observeLiveData()
     }
@@ -55,6 +59,9 @@ class InfoFragment : Fragment() {
                 binding.regionName.text = country.countryRegion
                 binding.cureency.text = country.countryCurrency
                 binding.language.text = country.countryLanguage
+                context?.let {
+                    binding.flagImage.downloadFromURL(country.countryFlag, placeHolderProgressBar(it))
+                }
             }
         }
     }
