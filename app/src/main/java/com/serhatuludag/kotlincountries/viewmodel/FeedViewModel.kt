@@ -71,5 +71,6 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
 
         customPreferences.saveTime(System.nanoTime())
 
+
     }
 }
