@@ -1,4 +1,4 @@
-package com.serhatuludag.kotlincountries.glideUtil
+package com.serhatuludag.kotlincountries.util
 
 import android.content.Context
 import android.widget.ImageView

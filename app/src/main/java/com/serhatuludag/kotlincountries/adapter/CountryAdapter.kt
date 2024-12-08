@@ -6,8 +6,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.serhatuludag.kotlincountries.databinding.ItemRowBinding
 import com.serhatuludag.kotlincountries.model.Country
-import com.serhatuludag.kotlincountries.glideUtil.downloadFromURL
-import com.serhatuludag.kotlincountries.glideUtil.placeHolderProgressBar
+import com.serhatuludag.kotlincountries.util.downloadFromURL
+import com.serhatuludag.kotlincountries.util.placeHolderProgressBar
 import com.serhatuludag.kotlincountries.view.FeedFragmentDirections
 
 class CountryAdapter(val countryList : ArrayList<Country>):RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
